@@ -1,6 +1,6 @@
 class BSTree:
     def __init__(self, head=None):
-        self.head = head
+        pass
 
     def insert(self, key, value=None):
         pass
@@ -14,7 +14,9 @@ class BSTree:
 class Node:
     def __init__(self, key, value, left=None, right=None):
         self.key = key
-        self.payload = value
+        # Sometimes the key is the value; if so, payload is just the key
+        if value is None:
+            self.payload = self.key
         self.left = left
         self.right = right
 
