@@ -1,19 +1,12 @@
+import collections
+
 class BSTree:
     def __init__(self, *args, **kwargs):
         self.head = None
         if args:
             print args
             for item in args:
-                if type(item) == "tuple":
-                    for elem in item:
-                        self.insert(elem)
-                if type(item) == "list":
-                    for elem in item:
-                        self.insert(elem)
-                if type(item) == "dict":
-                    self.insert(*item.items())
-                else:
-                    self.insert(item)
+                self.insert(item)
         if kwargs:
             print kwargs
             for item in kwargs.items():
@@ -54,6 +47,12 @@ class BSTree:
     def delete(self, key):
         pass
 
+    def print_in_order(self):
+        if self.head is None:
+            return []
+        else:
+            return self.head.print_in_order()
+
 class Node:
     def __init__(self, key, value, left=None, right=None):
         self.key = key
@@ -65,4 +64,12 @@ class Node:
         self.left = left
         self.right = right
 
+    def print_in_order(self):
+        sublist = []
+        if self.left:
+            sublist.extend(self.left.print_in_order())
+        sublist.append(self.payload)
+        if self.right:
+            sublist.extend(self.right.print_in_order())
+        return sublist
 

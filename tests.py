@@ -26,14 +26,23 @@ class IteratorInsert(unittest.TestCase):
     """Testing cases with lists, multiple arguments, and tuples as arguments
     to the class """
 
+
 class Delete(unittest.TestCase):
     """Testing deletion cases"""
     def setUp(self):
         list_set = [10, 5, 20, -4, -3, 12, -20]
-        self.tree = BSTree(list_set)
+        self.tree = BSTree(*list_set)
 
 
-        
+class Lists(unittest.TestCase):
+    """ Tests for printing the tree as a list """
+    def setUp(self):
+        self.list_set = [10, 5, 20, -4, -3, 12, -20]
+        self.tree = BSTree(*self.list_set)
+
+    def test_print_in_order(self):
+        self.list_set.sort()
+        self.assertEqual(self.tree.print_in_order(), self.list_set)
 
 
 
