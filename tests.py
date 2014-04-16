@@ -22,6 +22,9 @@ class SimpleInsert(unittest.TestCase):
         self.tree.insert("ten", 10)
         self.assertEqual("ten", 10)
 
+class IteratorInsert(unittest.TestCase):
+    """Testing cases with lists, multiple arguments, and tuples as arguments
+    to the class """
 
 class Delete(unittest.TestCase):
     """Testing deletion cases"""
