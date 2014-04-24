@@ -45,6 +45,9 @@ class BSTree:
         return None
 
     def delete(self, key):
+        """ Takes a key, finds the node associated with that key and returns the
+        value of the deleted key after deleting the node and maintaining the 
+        search structure of the tree"""
         pass
 
     def print_in_order(self):
